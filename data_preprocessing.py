@@ -43,8 +43,6 @@ x = onehotencoder.fit_transform(x).toarray()
 labelencoder_y = LabelEncoder() #transforming column[3]
 y = labelencoder_y.fit_transform(y)
 
-
-
 # Splitting the dataset into the training set and Test set
 from sklearn.cross_validation import train_test_split
 x_train,x_test,y_train,y_test = train_test_split(x,y,test_size = 0.2, random_state = 0 ) #  test_size percentage of data for test 
@@ -55,7 +53,6 @@ sc_x = StandardScaler()
 x_train = sc_x.fit_transform(x_train)
 x_test = sc_x.transform(x_test)
 
-# Why do we need to fit and transform for training and transform for the test?
 #feature scaling two types:
 #Standardisation and Normalisation 
 # To center the data (make it have zero mean and unit standard error), you subtract the mean and then divide the result by the standard deviation.
@@ -64,10 +61,7 @@ x_test = sc_x.transform(x_test)
 #standard Deviation = Squre root of average of sqared differences from the mean (x - mean)square/n
 # Every sklearn's transform's fit() just calculates the parameters (e.g. μ and σ in case of StandardScaler) and saves them as an internal objects state. Afterwards, you can call its transform() method to apply the transformation to a particular set of examples
 # why scaling ?? Refer IR(Eucledian distance)  
-
-#Normalisation x'= x-min of all the feature values(x)/max of feature values(x)- min of feature values(x)
-
-
- # why no Feature scaling to y_train and y_test??
- # The present dataset is a classification problem with categorical dependent varible y (Categorical variables take on values that are names or labels) 
- # in Regression we apply scaling to dependent variables as values are Qunatitative (numbers,qunatities) 
+# Normalisation x'= x-min of all the feature values(x)/max of feature values(x)- min of feature values(x)
+# why no Feature scaling to y_train and y_test??
+# The present dataset is a classification problem with categorical dependent varible y (Categorical variables take on values that are names or labels) 
+# in Regression we apply scaling to dependent variables as values are Qunatitative (numbers,qunatities) 
