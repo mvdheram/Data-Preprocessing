@@ -34,10 +34,10 @@ ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [0])], remaind
 X = np.array(ct.fit_transform(X))
 print(X)
 # Encoding the Dependent Variable
-    from sklearn.preprocessing import LabelEncoder
-    le = LabelEncoder()
-    y = le.fit_transform(y)
-    print(y)
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+y = le.fit_transform(y)
+print(y)
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.model_selection import train_test_split
